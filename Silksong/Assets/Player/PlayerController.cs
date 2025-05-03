@@ -61,14 +61,16 @@ public class PlayerController : MonoBehaviour
             //Sprint Bonus
             if (!isWalled)
             {
-                if (Input.GetButton("Sprint") && isGrounded) sprintBonus = 2;
+                if (Input.GetButton("Sprint") && isGrounded)
+                {
+                    sprintBonus = 2;
+                }
             } 
-            else
+            else if (isWalled || Input.GetButtonUp("Sprint"))
             {
                 sprintBonus = 0;
             }
-            if (Input.GetButtonUp("Sprint")) sprintBonus = 0;
-
+     
             //Horizontal movement and Sliding
             if (knockBackOn == false) RB.linearVelocity = new Vector2(horizontal * (moveSpeed + sprintBonus), RB.linearVelocity.y);
             else RB.gravityScale = gravity * 10;
