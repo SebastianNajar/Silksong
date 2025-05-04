@@ -151,10 +151,10 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         knockBackOn = true;
         RB.linearVelocity = new Vector2(dir * knockBack, knockBack / 2);
-        animator.SetBool("hurt", true);
+
         yield return new WaitForSeconds(0.3f);
+
         knockBackOn = false;
         canMove = true;
-        animator.SetBool("hurt", false);
     }
 }
