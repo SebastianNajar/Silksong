@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
             //terrain Collision Checks
             isGrounded = Physics2D.BoxCast(transform.position, new Vector2(0.79f, 0.5f), 0, -transform.up, 1f, ground);
-            isWalled = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 1.5f), 0, transform.position, 0, ground);
+            isWalled = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 1f), 0, transform.position, 0, ground);
 
             //Sprint Bonus
             if (!isWalled)
