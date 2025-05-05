@@ -15,7 +15,7 @@ public class PlayerAbilities : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && timer < 0 && !controller.isWalled)
+        if (Input.GetButtonDown("Fire1") && timer < 0)
         {
             slashAnimator.SetTrigger("attack");
             timer = cooldown;

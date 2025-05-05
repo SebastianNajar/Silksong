@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    //Player Data
+    public PlayerData playerData;
+
     public bool canMove = true;
 
     [Range(1, 10)]
@@ -77,8 +80,6 @@ public class PlayerController : MonoBehaviour
                 sprintBonus = 0;
                 animator.speed = 1;
             }
-
-
      
             //Horizontal movement and Sliding
             if (knockBackOn == false) RB.linearVelocity = new Vector2(horizontal * (moveSpeed + sprintBonus), RB.linearVelocity.y);
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded) hangCounter = hangTime;
             else hangCounter -= Time.deltaTime;
 
-            //Jump Buffer
+            //Jumping
             if (Input.GetButtonDown("Jump")) jumpBufferCounter = jumpBufferLength;
             else jumpBufferCounter -= Time.deltaTime;
 
@@ -127,15 +128,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Flip the character
     void TurnAround()
     {
-        // Flip the character
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
 
+    //Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -145,6 +147,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Knockback
     IEnumerator Attacked()
     {
         int dir = facingRight ? -1 : -1;
@@ -153,6 +156,8 @@ public class PlayerController : MonoBehaviour
         RB.linearVelocity = new Vector2(dir * knockBack, knockBack / 2);
 
         yield return new WaitForSeconds(0.3f);
+
+        playerData.HP--;
 
         knockBackOn = false;
         canMove = true;
