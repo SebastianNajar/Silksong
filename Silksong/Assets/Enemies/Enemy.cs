@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     //Health
     public int HP;
+    public Animator explosion;
 
     //Item
     public GameObject item;
@@ -55,6 +56,8 @@ public class Enemy : MonoBehaviour
             HP--;
             if(HP < 1)
             {
+                explosion.transform.position = transform.position;
+                explosion.SetTrigger("explode");
                 item.transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
                 Destroy(gameObject);
             }

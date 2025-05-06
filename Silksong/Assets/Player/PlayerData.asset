@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d70371c3354cf145868843cf82382d6, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  maxHP: 3
   HP: 3
   beads: 0
-  score: 0
+  score: 7800

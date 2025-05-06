@@ -155,9 +155,9 @@ public class PlayerController : MonoBehaviour
         knockBackOn = true;
         RB.linearVelocity = new Vector2(dir * knockBack, knockBack / 2);
 
-        yield return new WaitForSeconds(0.3f);
-
         playerData.HP--;
+
+        yield return new WaitForSeconds(0.3f);
 
         knockBackOn = false;
         canMove = true;
