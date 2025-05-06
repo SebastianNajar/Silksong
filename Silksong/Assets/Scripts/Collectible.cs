@@ -12,6 +12,11 @@ public class Collectible : MonoBehaviour
         {
             playerData.score += points;
 
+            if (isBead)
+            {
+                playerData.beads++;
+            }
+
             Destroy(gameObject);
         }
     }
