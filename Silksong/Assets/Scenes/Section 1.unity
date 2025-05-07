@@ -343,6 +343,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 1000
   isBead: 1
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!61 &177925793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -767,6 +768,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!61 &347726239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1506,6 +1508,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!61 &623048098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1657,6 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 969253117}
   item: {fileID: 1328495870}
   player:
@@ -2219,6 +2223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 969253117}
   item: {fileID: 1242347539}
   moveSpeed: 3
@@ -2437,6 +2442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 969253117}
   item: {fileID: 623048095}
   player:
@@ -2455,6 +2461,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1ffbf835f358c4899afa6d45b31dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &858082982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858082983}
+  - component: {fileID: 858082984}
+  m_Layer: 0
+  m_Name: SOUND MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &858082983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858082982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 58.977688, y: 4.421442, z: 0.5273408}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &858082984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858082982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd89fea887513dd4fbe6062ddf8232dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObject: {fileID: 1258749028865107103, guid: 5bac61eb1a66bf842831877f38946683, type: 3}
 --- !u!1 &869862289
 GameObject:
   m_ObjectHideFlags: 0
@@ -9701,6 +9752,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!114 &1242347544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9838,6 +9890,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!61 &1328495873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10029,6 +10082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 969253117}
   item: {fileID: 347726236}
   moveSpeed: 3
@@ -11709,6 +11763,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 1000
   isBead: 1
+  collectClip: {fileID: 8300000, guid: 70486adc2063e2e44ac4649756b4008c, type: 3}
 --- !u!61 &1708508796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12478,6 +12533,7 @@ MonoBehaviour:
   controller: {fileID: 2082974744}
   slashAnimator: {fileID: 515080502}
   cooldown: 0.6
+  slashClip: {fileID: 8300000, guid: aac8776a16c17b74584de0bcd132c6e9, type: 3}
 --- !u!114 &2082974749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12504,3 +12560,4 @@ SceneRoots:
   - {fileID: 1097898193}
   - {fileID: 969253116}
   - {fileID: 1569468602}
+  - {fileID: 858082983}

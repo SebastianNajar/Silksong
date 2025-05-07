@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        //Reset Player Data
+        playerData.HP = 3;
+        playerData.score = 0;
+        playerData.beads = 0;
+
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);

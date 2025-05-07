@@ -6,6 +6,7 @@ public class PlayerAbilities : MonoBehaviour
     public Animator slashAnimator;
     public float cooldown;
     private float timer;
+    public AudioClip slashClip;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class PlayerAbilities : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && timer < 0)
         {
             slashAnimator.SetTrigger("attack");
+            SoundManager.instance.PlaySoundClip(slashClip, transform, 1);
             timer = cooldown;
         }
     }
