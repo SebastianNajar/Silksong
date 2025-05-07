@@ -2617,8 +2617,9 @@ GameObject:
   - component: {fileID: 1037702168}
   - component: {fileID: 1037702167}
   - component: {fileID: 1037702169}
+  - component: {fileID: 1037702170}
   m_Layer: 0
-  m_Name: Statue
+  m_Name: Bead Statue 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2709,6 +2710,7 @@ MonoBehaviour:
   HP: 2
   item: {fileID: 1432075062}
   pieces: {fileID: 1136548775}
+  stayDestroyed: 1
 --- !u!61 &1037702168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2765,6 +2767,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c1ffbf835f358c4899afa6d45b31dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1037702170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037702164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee2fd210eff1524aa8300101c64bdcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1136548773

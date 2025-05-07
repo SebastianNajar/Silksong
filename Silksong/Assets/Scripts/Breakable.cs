@@ -6,6 +6,7 @@ public class Breakable : MonoBehaviour
     public int HP;
     public GameObject item;
     public ParticleSystem pieces;
+    public bool stayDestroyed;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +18,10 @@ public class Breakable : MonoBehaviour
             if (HP < 1)
             {
                 item.transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
+                if (stayDestroyed)
+                {
+                    GameManager.Instance.RegisterDestroyedObject(gameObject.name);
+                }
                 Destroy(gameObject);
             }
         }

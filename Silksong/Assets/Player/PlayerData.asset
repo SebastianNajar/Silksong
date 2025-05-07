@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   HP: 3
-  beads: 0
-  score: 0
+  beads: 4
+  score: 1000
