@@ -606,6 +606,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: c8a89f8668a40b84c9d79457d9a6c6a6, type: 3}
 --- !u!61 &545972277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -769,6 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 1506584626}
   item: {fileID: 545972274}
   moveSpeed: 3
@@ -1062,6 +1064,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: c8a89f8668a40b84c9d79457d9a6c6a6, type: 3}
 --- !u!61 &623048098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1409,6 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 1506584626}
   item: {fileID: 1242347539}
   moveSpeed: 3
@@ -1627,6 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  deathClip: {fileID: 8300000, guid: ac52e050bff5a2046a2ac6ceaff874b7, type: 3}
   explosion: {fileID: 1506584626}
   item: {fileID: 623048095}
   player:
@@ -4806,6 +4811,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   points: 100
   isBead: 0
+  collectClip: {fileID: 8300000, guid: c8a89f8668a40b84c9d79457d9a6c6a6, type: 3}
 --- !u!114 &1242347544
 MonoBehaviour:
   m_ObjectHideFlags: 0

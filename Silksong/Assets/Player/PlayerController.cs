@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
     public float hangTime = 0.15f;
     private float hangCounter;
 
-    //Jump buffer
+    //Jumping
+    public AudioClip jumpClip;
     public float jumpBufferLength = 0.1f;
     private float jumpBufferCounter;
 
@@ -95,7 +96,8 @@ public class PlayerController : MonoBehaviour
 
             if (jumpBufferCounter >= 0 && hangCounter > 0f)
             {
-                RB.linearVelocity = new Vector2(RB.linearVelocity.x, (jumpForce + sprintBonus / 2));
+                SoundManager.instance.PlaySoundClip(jumpClip, transform, 0.25f);
+                RB.linearVelocity = new Vector2(RB.linearVelocity.x, jumpForce + sprintBonus / 2);
                 jumpBufferCounter = 0;
             }
             if (Input.GetButtonUp("Jump") && RB.linearVelocity.y > 0)

@@ -5,22 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool reset;
+
     public static GameManager Instance;
 
     public PlayerData playerData;
     public HashSet<string> destroyedObjects = new HashSet<string>();
 
     //Level 1
-    public GameObject beadDoor;
     private Animator beadDoorAnimator;
+    public AudioClip beadDoorClip;
     private bool opened = false;
 
     public void Awake()
     {
         //Reset Player Data
-        playerData.HP = 3;
-        playerData.score = 0;
-        playerData.beads = 0;
+        if (reset)
+        {
+            playerData.HP = 3;
+            playerData.score = 0;
+            playerData.beads = 0;
+        }
 
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
@@ -47,6 +52,7 @@ public class GameManager : MonoBehaviour
         if(playerData.beads > 3 && !opened)
         {
             beadDoorAnimator.SetBool("open", true);
+            SoundManager.instance.PlaySoundClip(beadDoorClip, transform, 5);
             opened = true;
             StartCoroutine(ClearBeads());
         }

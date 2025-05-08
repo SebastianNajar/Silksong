@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   maxHP: 3
-  HP: -3
-  beads: 2
-  score: 5800
+  HP: 1
+  beads: 3
+  score: 1100

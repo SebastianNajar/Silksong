@@ -41,7 +41,7 @@ public class FlyingEnemy : MonoBehaviour
             HP--;
             if (HP < 1)
             {
-                SoundManager.instance.PlaySoundClip(deathClip, transform, 1);
+                SoundManager.instance.PlaySoundClip(deathClip, transform, 2);
                 explosion.transform.position = transform.position;
                 explosion.SetTrigger("explode");
                 item.transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
