@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public PlayerData playerData;
+
     public HashSet<string> destroyedObjects = new HashSet<string>();
+
+    public Transform respawnPoint;
 
     //Level 1
     private Animator beadDoorAnimator;

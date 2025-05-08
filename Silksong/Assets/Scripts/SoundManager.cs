@@ -16,15 +16,15 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundClip(AudioClip audioClip, Transform spawnTransform, float volume)
     {
-        AudioSource audioSource = Instantiate(soundObject, spawnTransform.position, Quaternion.identity);
+        soundObject.transform.position = spawnTransform.position;
 
-        audioSource.clip = audioClip;
+        soundObject.clip = audioClip;
 
-        audioSource.volume = volume;
+        soundObject.volume = volume;
 
-        audioSource.Play();
+        soundObject.Play();
 
-        float clipLength = audioSource.clip.length;
+        float clipLength = soundObject.clip.length;
     }
 
     public void PlayRandomSoundClip(AudioClip audioClip, Transform spawnTransform, float volume)

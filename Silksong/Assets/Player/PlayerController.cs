@@ -147,6 +147,28 @@ public class PlayerController : MonoBehaviour
             canMove = false;
             StartCoroutine(Attacked());
         }
+
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            canMove = false;
+            StartCoroutine(Death());
+        }
+    }
+
+    //Death
+    IEnumerator Death()
+    {
+        playerData.HP = 0;
+
+        yield return new WaitForSeconds(1);
+
+        transform.position = GameManager.Instance.respawnPoint.position;
+
+        Scene currScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currScene.name);
+
+        playerData.HP = playerData.maxHP;
+        canMove = true;
     }
 
     //Knockback
@@ -163,5 +185,10 @@ public class PlayerController : MonoBehaviour
 
         knockBackOn = false;
         canMove = true;
+
+        if(playerData.HP < 1)
+        {
+            StartCoroutine(Death());
+        }
     }
 }
