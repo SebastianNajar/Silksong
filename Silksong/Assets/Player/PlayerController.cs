@@ -171,10 +171,16 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    public int GetDirection()
+    {
+        int dir = facingRight ? 1 : -1;
+        return dir;
+    }
+
     //Knockback
     IEnumerator Attacked()
     {
-        int dir = facingRight ? -1 : -1;
+        int dir = facingRight ? 1 : -1;
         canMove = false;
         knockBackOn = true;
         RB.linearVelocity = new Vector2(dir * knockBack, knockBack / 2);
