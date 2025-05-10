@@ -2316,7 +2316,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2044395223}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &994095692
 BoxCollider2D:
@@ -12796,7 +12796,6 @@ Transform:
   - {fileID: 918850151}
   - {fileID: 1445512062}
   - {fileID: 1322576163}
-  - {fileID: 994095691}
   - {fileID: 747615040}
   - {fileID: 1515371693}
   - {fileID: 1165187091}
@@ -12900,4 +12899,5 @@ SceneRoots:
   - {fileID: 655257304}
   - {fileID: 1466714256}
   - {fileID: 1179625558}
+  - {fileID: 994095691}
   - {fileID: 2044395223}
