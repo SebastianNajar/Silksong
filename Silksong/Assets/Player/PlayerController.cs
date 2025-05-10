@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     //Hang time
     public float hangTime = 0.15f;
-    private float hangCounter;
+    public float hangCounter;
 
     //Jumping
     public AudioClip jumpClip;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     //Animation
     public Animator animator;
-    private bool facingRight = true;
+    public bool facingRight = true;
 
     //Attacked
     public int knockBack = 12;
@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //terrain Collision Checks
+        isGrounded = Physics2D.BoxCast(transform.position, new Vector2(0.79f, 0.5f), 0, -transform.up, 1f, ground);
+        isWalled = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 1f), 0, transform.position, 0, ground);
+
         if (canMove)
         {
             float horizontal = Input.GetAxis("Horizontal");
-
-            //terrain Collision Checks
-            isGrounded = Physics2D.BoxCast(transform.position, new Vector2(0.79f, 0.5f), 0, -transform.up, 1f, ground);
-            isWalled = Physics2D.BoxCast(transform.position, new Vector2(1.6f, 1f), 0, transform.position, 0, ground);
 
             //Sprint Bonus
             if (!isWalled)
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
              //Set Animation variables
             animator.SetFloat("xSpeed", Mathf.Abs(RB.linearVelocityX));
-            animator.SetFloat("ySpeed", (RB.linearVelocityY));
+            animator.SetFloat("ySpeed", RB.linearVelocityY);
             animator.SetBool("grounded", isGrounded);
 
             //Turn Around
@@ -171,6 +171,8 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+
+    //Returns int representing which direction the Player is facing
     public int GetDirection()
     {
         int dir = facingRight ? 1 : -1;

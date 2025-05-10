@@ -3292,7 +3292,8 @@ MonoBehaviour:
   cooldown: 0.6
   slashClip: {fileID: 8300000, guid: aac8776a16c17b74584de0bcd132c6e9, type: 3}
   dashTimer: 0
-  dashSpeed: 15
+  dashSpeed: 10
+  presses: 0
 --- !u!114 &1991024752
 MonoBehaviour:
   m_ObjectHideFlags: 0

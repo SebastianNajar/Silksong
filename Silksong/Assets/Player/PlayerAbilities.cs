@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerAbilities : MonoBehaviour
     public AudioClip slashClip;
 
     //Dash
+    private bool hasDash = false;
     public float dashTimer = 0.5f;
     public float dashSpeed;
     public int presses = 0;
@@ -32,22 +34,46 @@ public class PlayerAbilities : MonoBehaviour
             slashTimer = cooldown;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (hasDash)
         {
-            dashTimer = 0;
-            presses++;
-        }
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+            {
+                dashTimer = 0;
+                presses++;
+            }
 
-        if(dashTimer > 0.5)
-        {
-            presses = 0;
-        }
+            if (dashTimer > 0.5)
+            {
+                presses = 0;
+            }
 
-        if(Input.GetKeyDown(KeyCode.D) && dashTimer < 0.5f && presses == 2)
-        {
-            Debug.Log("Dash");
-            int dir = controller.GetDirection();
-            controller.RB.linearVelocity = new(dir * dashSpeed, controller.RB.linearVelocityY);
+            if (Input.GetKeyDown(KeyCode.D) && dashTimer < 0.3f && presses == 2 && controller.facingRight ||
+                Input.GetKeyDown(KeyCode.A) && dashTimer < 0.3f && presses == 2 && !controller.facingRight)
+            {
+                StartCoroutine(Dash());
+            }
         }
+    }
+
+    public void ObtainDash()
+    {
+        hasDash = true;
+    }
+
+    IEnumerator Dash()
+    {
+        controller.animator.speed = 1;
+        controller.animator.SetTrigger("dash");
+
+        int dir = controller.GetDirection();
+        controller.canMove = false;
+        controller.RB.gravityScale = 0;
+        controller.hangCounter = 0;
+        controller.RB.linearVelocity = new(dir * dashSpeed, 0);
+
+        yield return new WaitForSeconds(0.1f);
+
+        controller.canMove = true;
+        controller.RB.gravityScale = 1;
     }
 }

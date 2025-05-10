@@ -340,7 +340,7 @@ MonoBehaviour:
   cooldown: 0.6
   slashClip: {fileID: 8300000, guid: aac8776a16c17b74584de0bcd132c6e9, type: 3}
   dashTimer: 0.5
-  dashSpeed: 35
+  dashSpeed: 27
   presses: 0
 --- !u!114 &1018595587
 MonoBehaviour:
@@ -365,10 +365,12 @@ MonoBehaviour:
     m_Bits: 8
   isGrounded: 0
   isWalled: 0
-  hangTime: 0.15
+  hangTime: 0.08
+  hangCounter: 0
   jumpClip: {fileID: 8300000, guid: e802acca555cff64fa362dd9059e040c, type: 3}
   jumpBufferLength: 0.1
   animator: {fileID: 0}
+  facingRight: 1
   knockBack: 12
 --- !u!95 &1018595588
 Animator:
