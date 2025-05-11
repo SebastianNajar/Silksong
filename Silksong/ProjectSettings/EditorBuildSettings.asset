@@ -9,20 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/0 Title.unity
     guid: de502a147819edc47bdf3c3570af1f84
   - enabled: 1
-    path: Assets/Scenes/Section 1.unity
+    path: Assets/Scenes/Moss Grotto/Section 1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Section 2.unity
+    path: Assets/Scenes/Moss Grotto/Section 2.unity
     guid: 169ec2c24bd319d4ab84cf79b69ed85a
   - enabled: 1
-    path: Assets/Scenes/Section 2-a.unity
+    path: Assets/Scenes/Moss Grotto/Section 2-a.unity
     guid: f0962a4ee5271194eb4466e91855d9c9
   - enabled: 1
-    path: Assets/Scenes/Section 3.unity
+    path: Assets/Scenes/Moss Grotto/Section 3.unity
     guid: 96e91cd67c1da6244bf64f27a17879bf
   - enabled: 1
-    path: Assets/Scenes/Section 4.unity
+    path: Assets/Scenes/Moss Grotto/Section 4.unity
     guid: f80b3d77eb0b9424589921de76d3a928
+  - enabled: 1
+    path: Assets/Scenes/Moss Grotto/Section 5.unity
+    guid: f583cc0ca20405e47beb44b441e2565f
+  - enabled: 1
+    path: Assets/Scenes/Deep Docks/Section 6.unity
+    guid: 485b0930d15da004fb16e7721c693939
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public PlayerData playerData;
+    public PlayerAbilities abilities;
 
     public HashSet<string> destroyedObjects = new HashSet<string>();
 
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviour
             case "beadDoor":
                 OpenBeadDoor();
                 break;
+            case "dashCloak":
+                abilities.ObtainDash();
+                break;
         }
     }
 
@@ -63,7 +67,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ClearBeads()
     {
-        for(int i = 0; i < playerData.beads; i++)
+        int numBeads = playerData.beads;
+
+        for(int i = 0; i < numBeads; i++)
         {
             yield return new WaitForSeconds(0.5f);
             playerData.beads--;

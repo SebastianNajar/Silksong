@@ -367,11 +367,12 @@ MonoBehaviour:
   isWalled: 0
   hangTime: 0.08
   hangCounter: 0
-  jumpClip: {fileID: 8300000, guid: e802acca555cff64fa362dd9059e040c, type: 3}
   jumpBufferLength: 0.1
   animator: {fileID: 0}
   facingRight: 1
   knockBack: 12
+  jumpClip: {fileID: 8300000, guid: e802acca555cff64fa362dd9059e040c, type: 3}
+  hurtClip: {fileID: 8300000, guid: 4afe96694c02f7a4a93426f82709c3cf, type: 3}
 --- !u!95 &1018595588
 Animator:
   serializedVersion: 7
@@ -1297,6 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reset: 1
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
+  abilities: {fileID: 1018595586}
   respawnPoint: {fileID: 1711005596}
   beadDoorClip: {fileID: 8300000, guid: 5827745f4b8c19742b78616cb0417f33, type: 3}
 --- !u!4 &2036727108

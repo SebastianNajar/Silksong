@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     public float hangCounter;
 
     //Jumping
-    public AudioClip jumpClip;
     public float jumpBufferLength = 0.1f;
     private float jumpBufferCounter;
 
@@ -38,8 +37,13 @@ public class PlayerController : MonoBehaviour
     public bool facingRight = true;
 
     //Attacked
+    private bool dead = false;
     public int knockBack = 12;
     private bool knockBackOn = false;
+
+    //SFX
+    public AudioClip jumpClip;
+    public AudioClip hurtClip;
 
     void Awake()
     {
@@ -142,15 +146,13 @@ public class PlayerController : MonoBehaviour
     //Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            canMove = false;
+        if (collision.gameObject.CompareTag("Enemy") && !dead)
+        {           
             StartCoroutine(Attacked());
         }
 
-        if (collision.gameObject.CompareTag("Death"))
-        {
-            canMove = false;
+        if (collision.gameObject.CompareTag("Death") && !dead)
+        {          
             StartCoroutine(Death());
         }
     }
@@ -158,7 +160,11 @@ public class PlayerController : MonoBehaviour
     //Death
     IEnumerator Death()
     {
+        canMove = false;
+        dead = true;
         playerData.HP = 0;
+
+        RB.linearVelocity = Vector2.zero;
 
         yield return new WaitForSeconds(1);
 
@@ -167,8 +173,9 @@ public class PlayerController : MonoBehaviour
         Scene currScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currScene.name);
 
-        playerData.HP = playerData.maxHP;
         canMove = true;
+        dead = false;
+        playerData.HP = playerData.maxHP;
     }
 
 
@@ -185,11 +192,13 @@ public class PlayerController : MonoBehaviour
         int dir = facingRight ? 1 : -1;
         canMove = false;
         knockBackOn = true;
-        RB.linearVelocity = new Vector2(dir * knockBack, knockBack / 2);
+        RB.linearVelocity = Vector2.zero;
+        RB.linearVelocity = new Vector2(-dir * knockBack, knockBack / 2);
 
         playerData.HP--;
+        SoundManager.instance.PlaySoundClip(hurtClip, transform, 1);
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
 
         knockBackOn = false;
         canMove = true;
