@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
 
         raySize = col.size.x / 1.7f;
-        Debug.Log(raySize);
     }
 
     // Update is called once per frame

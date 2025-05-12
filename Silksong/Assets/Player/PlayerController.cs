@@ -198,14 +198,14 @@ public class PlayerController : MonoBehaviour
         playerData.HP--;
         SoundManager.instance.PlaySoundClip(hurtClip, transform, 1);
 
+        if (playerData.HP < 1)
+        {
+            StartCoroutine(Death());
+        }
+
         yield return new WaitForSeconds(0.4f);
 
         knockBackOn = false;
         canMove = true;
-
-        if(playerData.HP < 1)
-        {
-            StartCoroutine(Death());
-        }
     }
 }
