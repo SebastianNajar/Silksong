@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 381856217}
   - component: {fileID: 381856220}
   - component: {fileID: 381856219}
+  - component: {fileID: 381856221}
   m_Layer: 0
   m_Name: Mask Shard
   m_TagString: Untagged
@@ -565,6 +566,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c1ffbf835f358c4899afa6d45b31dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &381856221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381856215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee2fd210eff1524aa8300101c64bdcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028

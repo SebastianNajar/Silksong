@@ -6,6 +6,7 @@ public class Collectible : MonoBehaviour
     public int points;
     public bool isBead;
     public AudioClip collectClip;
+    public bool stayDestroyed;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,12 @@ public class Collectible : MonoBehaviour
             }
 
             SoundManager.instance.PlaySoundClip(collectClip, transform, 1);
+
+            if (stayDestroyed)
+            {
+                GameManager.Instance.RegisterDestroyedObject(gameObject.name);
+            }
+
             Destroy(gameObject);
         }
     }
