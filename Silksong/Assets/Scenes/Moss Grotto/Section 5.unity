@@ -2264,7 +2264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1627198575
 Transform:
   m_ObjectHideFlags: 0
@@ -2297,6 +2297,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 98f7621e845b14246af30c6f07f3deb7, type: 2}
   abilities: {fileID: 1846592468}
   respawnPoint: {fileID: 48203163}
+  onTitle: 0
   beadDoorClip: {fileID: 8300000, guid: 5827745f4b8c19742b78616cb0417f33, type: 3}
 --- !u!1 &1706073520
 GameObject:
@@ -2311,6 +2312,7 @@ GameObject:
   - component: {fileID: 1706073525}
   - component: {fileID: 1706073521}
   - component: {fileID: 1706073524}
+  - component: {fileID: 1706073526}
   m_Layer: 0
   m_Name: Cloak
   m_TagString: Untagged
@@ -2334,6 +2336,7 @@ MonoBehaviour:
   points: 2000
   isBead: 0
   collectClip: {fileID: 8300000, guid: 610159855cb1661468d3192c52e98f48, type: 3}
+  stayDestroyed: 1
 --- !u!212 &1706073522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2463,6 +2466,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4628571, y: 1.4628571}
   m_EdgeRadius: 0
+--- !u!114 &1706073526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706073520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee2fd210eff1524aa8300101c64bdcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1737573930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,7 +2772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1846592466
 Transform:
   m_ObjectHideFlags: 0
@@ -3408,7 +3423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2099417614
 Transform:
   m_ObjectHideFlags: 0

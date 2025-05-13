@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     public Transform respawnPoint;
 
+    //Title Screen
+    public bool onTitle;
+
     //Level 1
     private Animator beadDoorAnimator;
     public AudioClip beadDoorClip;
@@ -34,6 +37,18 @@ public class GameManager : MonoBehaviour
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if (onTitle)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                onTitle = false;
+                SceneManager.LoadScene("Section 1");
+            }
+        }
     }
 
     public void StartEvent(string newEvent)

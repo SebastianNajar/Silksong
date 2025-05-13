@@ -30,7 +30,7 @@ public class PlayerAbilities : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && slashTimer < 0)
         {
             slashAnimator.SetTrigger("attack");
-            SoundManager.instance.PlaySoundClip(slashClip, transform, 1);
+            SoundManager.instance.PlaySoundClip(slashClip, transform, 0.5f);
             slashTimer = cooldown;
         }
 
